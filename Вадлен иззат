@@ -1,0 +1,49 @@
+class Student():
+    def __init__(self, name, surname, gender, c):
+        self.name = name
+        self.surname = surname
+        self.gender = gender
+        
+    def academic_performance(self):
+        
+        print('Введите оценки ученика',self.name, self.surname,' в одну строку через пробел')
+        marks = int(input())
+        if marks == 5:
+            if self.gender == 'ж':
+                print(self.name, self.surname, 'отличница')
+            elif self.gender == 'м':
+                print(self.name, self.surname, 'отличник')
+        
+        if marks == 4:
+            if self.gender != 'ж':
+                print(self.name, self.surname, 'хорошистка')
+            elif self.gender == 'м':
+                print(self.name, self.surname, 'хорошист')
+
+        if marks == 3:
+            if self.gender != 'ж':
+                print(self.name, self.surname, 'троечница')
+            elif self.gender == 'м':
+                print(self.name, self.surname, 'троечник')
+
+        if marks == 2:
+            if self.gender != 'ж':
+                print(self.name, self.surname, 'неуспевающая')
+            elif self.gender == 'м':
+                print(self.name, self.surname, 'неуспевающий')
+                
+students = list()
+a = int(input('Сколько учеников в классе?'))
+for i in range(a):
+    
+    c = str(input('Введите имя, фамилию и пол (м/ж) ученика в одну строку через пробел'))
+    name = c[0:c.find(' ')]
+    
+    surname = c[c.find(' ')+1:len(c) - 2]
+    gender = c[len(c)-1:len(c)]
+    name = Student(name, surname, gender, c)
+    students.append(name)
+s = 0
+for i in range(len(students)):
+    students[s].academic_performance()
+    s += 1
