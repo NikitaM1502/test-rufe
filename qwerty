@@ -1,0 +1,17 @@
+class Student():
+    def __init__(self, name, surname, gender):
+        self.name = name
+        self.surname = surname
+        self.gender = gender
+    def academic_performance():
+        marks = input('Введите оценки ученика',surname,name,'ч')
+
+a = int(input('Сколько учеников в классе?'))
+b = 0
+while b < a:
+    c = str(input('Введите имя, фамилию и пол (м/ж) ученика в одну строку через пробел'))
+    name = c[0:c.find(' ')]
+    surename = c[c.find(' ')+1:len(c) - 2])
+    gender = c[len(c)-1:len(c)]
+
+    name = Student(name, surename, gender )
