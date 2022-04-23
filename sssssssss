@@ -1,0 +1,17 @@
+names = list()
+for i in range(4):
+ 
+    name = list(input().split(' '))
+    
+    for i in range(len(name)):
+        names.append(name[i - 1])
+
+nameill = list(input().split(' '))
+for i in nameill:
+    if i in names:
+        names.remove(i)
+        
+print('Количество ребят:',len(names))
+names.sort()
+for i in range(len(names)):
+        print(names[i - 1])
