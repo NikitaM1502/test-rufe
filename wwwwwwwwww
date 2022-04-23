@@ -1,0 +1,38 @@
+staff = {
+    'Фролова': {
+        'должность': 'маркетолог',
+        'эффективность': 71
+    },
+    'Коровин': {
+        'должность': 'маркетолог',
+        'эффективность': 65
+    },
+    'Пивоваров': {
+        'должность': 'маркетолог',
+        'эффективность': 49
+    },
+    'Листьева': {
+        'должность': 'маркетолог',
+        'эффективность': 53
+    }
+}
+def bad_personal(staff):
+    for i in staff:
+        if staff[i]['эффективность'] < 50:
+            o = i
+        else:
+            continue
+        return o
+bad_personal(staff)
+def good_personal(staff):
+    o = bad_personal(staff)
+    print('Сотрудник',o,'рекомендован к увольнению')
+    q = list()
+    for i in staff:
+        q.append(i)
+    q.remove(o)
+    return q
+q = good_personal(staff)
+print('Эффективные сотрудники:')
+for i in q:
+    print(i)
