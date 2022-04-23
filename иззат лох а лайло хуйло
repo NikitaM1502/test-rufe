@@ -1,0 +1,64 @@
+class Student():
+    def __init__(self, name, surname, gender, c):
+        self.name = name
+        self.surname = surname
+        self.gender = gender
+        
+    def academic_performance(self):
+        
+        print('Введите оценки ученика',self.name, self.surname,' в одну строку через пробел')
+        marks = list(map(int,input().split(' ')))
+        y = sum(marks) // len(marks)
+        
+        # for i in range(len(marks)):
+        #     if marks[p] == '5':
+        #         o = 5
+        #     elif marks[p] == '4':
+        #         o = 4
+        #     elif marks[p] == '3':
+        #         o = 3
+        #     elif marks[p] == '2':
+        #         o = 2
+        #     y = y + o
+        #     p += 1
+        # y = y // len(marks)
+        # print(y)
+        if y == 5:
+            if self.gender == 'ж':
+                print(self.name, self.surname, 'отличница')
+            elif self.gender == 'м':
+                print(self.name, self.surname, 'отличник')
+        
+        elif y == 4:
+            if self.gender == 'ж':
+                print(self.name, self.surname, 'хорошистка')
+            elif self.gender == 'м':
+                print(self.name, self.surname, 'хорошист')
+
+        elif y == 3:
+            if self.gender == 'ж':
+                print(self.name, self.surname, 'троечница')
+            elif self.gender == 'м':
+                print(self.name, self.surname, 'троечник')
+
+        elif y == 2:
+            if self.gender == 'ж':
+                print(self.name, self.surname, 'неуспевающая')
+            elif self.gender == 'м':
+                print(self.name, self.surname, 'неуспевающий')
+                
+students = list()
+a = int(input('Сколько учеников в классе?'))
+for i in range(a):
+    
+    c = str(input('Введите имя, фамилию и пол (м/ж) ученика в одну строку через пробел'))
+    name = c[0:c.find(' ')]
+    
+    surname = c[c.find(' ')+1:len(c) - 2]
+    gender = c[len(c)-1:len(c)]
+    name = Student(name, surname, gender, c)
+    students.append(name)
+s = 0
+for i in range(len(students)):
+    students[s].academic_performance()
+    s += 1
