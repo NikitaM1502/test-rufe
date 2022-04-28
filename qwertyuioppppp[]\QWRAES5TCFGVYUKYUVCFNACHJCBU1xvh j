@@ -1,0 +1,9 @@
+set1 = set(input('')) 
+set2 = set(input('')) 
+set3 = set(input(''))
+a = ''
+if set1.intersection(set2, set3):
+    for a in set1.intersection(set2, set3):
+        print('Выбранные факультативы:',set1.intersection(set2, set3))
+else:
+    print("Не удалось выбрать факультативы, интересные всем троим.")
